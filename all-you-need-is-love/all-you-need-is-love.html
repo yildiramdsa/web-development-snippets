@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alina Yildir | All You Need Is Love</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="HTML, CSS, JavaScript, Adobe Photoshop">
+<meta name="keywords" content="HTML, CSS, JavaScript, Adobe Photoshop">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shrikhand">
+<link rel="stylesheet" href="css/all-you-need-is-love.css">
+</head>
+<body>
+<div class="panels">
+  <div class="panel panel1">
+    <p>Against</p>
+    <p>All</p>
+    <p>Odds</p>
+  </div>
+  <div class="panel panel2">
+    <p>Yes</p>
+    <p>You</p>
+    <p>Can</p>
+  </div>
+  <div class="panel panel3">
+    <p>You</p>
+    <p>Need</p>
+    <p>Freedom</p>
+  </div>
+  <div class="panel panel4">
+    <p>Family</p>
+    <p>Is</p>
+    <p>Forever</p>
+  </div>
+  <div class="panel panel5">
+    <p>I</p>
+    <p>Love</p>
+    <p>You</p>
+  </div>
+</div>
+<script>
+    const panels = document.querySelectorAll('.panel');
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+</script>
+</body>
+</html>
