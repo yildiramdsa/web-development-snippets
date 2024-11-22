@@ -1,0 +1,213 @@
+body {
+  background-image: url("../img/tic-tac-toe.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1d1d1d;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: auto;
+  overflow-x: hidden;
+}
+.welcomeScreen p {
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+  color: #fece1a;
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.5rem;
+  word-spacing: 2.5px;
+}
+#initGame {
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  color: #1d1d1d;
+  background-color: #fece1a;
+  border: 1px solid #fece1a;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#initGame:active, #initGame:focus, #initGame:hover {
+  background-color: #f8f8f8;
+  border: 1px solid #f8f8f8;
+}
+.gameBoard {
+  margin-top: 7.5%;
+}
+.gameBoard table {
+  border-collapse: collapse;
+  margin: auto;
+}
+.square {
+  width: 50px;
+  height: 50px;
+}
+.leftRight {
+  border-left: 2px solid #f8f8f8;
+  border-right: 2px solid #f8f8f8;
+}
+.topBottom {
+  border-top: 2px solid #f8f8f8;
+  border-bottom: 2px solid #f8f8f8;
+}
+#playerName {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fece1a;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 3%;
+}
+#newGame, #displayResults, #resetGameButton {
+  width: 50%;
+  margin: 2px auto;
+  display: block;
+  padding: 10px;
+  color: #1d1d1d;
+  background-color: #fece1a;
+  border: 1px solid #fece1a;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#newGame:active, #newGame:focus, #newGame:hover, #displayResults:active, #displayResults:focus, #displayResults:hover, #resetGameButton:active, #resetGameButton:focus, #resetGameButton:hover {
+  background-color: #f8f8f8;
+  border: 1px solid #f8f8f8;
+}
+#tableResults {
+  width: 75%;
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+#tableHeader {
+  background-color: #fece1a;
+  color: #1d1d1d;
+  border: 1px solid #ffffff;
+  text-align: center;
+  font-weight: 400;
+}
+#resultPlayerX, #resultPlayerO {
+  background-color: #e0e0e0;
+  color: #1d1d1d;
+  border: 1px solid #ffffff;
+  text-align: center;
+  font-weight: 400;
+}
+@media only screen and (min-width: 576px) {
+  .welcomeScreen p {
+    font-size: 2.5rem;
+  }
+  #initGame {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .gameBoard {
+    margin-top: 5%;
+  }
+  .square {
+    width: 70px;
+    height: 70px;
+  }
+  #playerName {
+    font-size: 1.25rem;
+    margin-top: 2.5%;
+  }
+  #newGame, #displayResults, #resetGameButton {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  #tableResults {
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .welcomeScreen p {
+    font-size: 3.5rem;
+  }
+  #initGame {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1rem;
+  }
+  .gameBoard {
+    margin-top: 5%;
+  }
+  .square {
+    width: 90px;
+    height: 90px;
+  }
+  #playerName {
+    font-size: 1.5rem;
+    margin-top: 2.5%;
+  }
+  #newGame, #displayResults, #resetGameButton {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1rem;
+  }
+  #tableResults {
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .welcomeScreen p {
+    font-size: 3.5rem;
+  }
+  #initGame {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1.1rem;
+  }
+  .gameBoard {
+    margin-top: 2.5%;
+  }
+  .square {
+    width: 110px;
+    height: 110px;
+  }
+  #playerName {
+    font-size: 1.75rem;
+    margin-top: 2%;
+  }
+  #newGame, #displayResults, #resetGameButton {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1.1rem;
+  }
+  #tableResults {
+    width: 35%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .welcomeScreen p {
+    font-size: 4.5rem;
+  }
+  #initGame {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1.2rem;
+  }
+  .gameBoard {
+    margin-top: 2.5%;
+  }
+  .square {
+    width: 130px;
+    height: 130px;
+  }
+  #playerName {
+    font-size: 2rem;
+    margin-top: 2%;
+  }
+  #newGame, #displayResults, #resetGameButton {
+    width: 25%;
+    padding: 12.5px;
+    font-size: 1.2rem;
+  }
+  #tableResults {
+    width: 35%;
+  }
+}
