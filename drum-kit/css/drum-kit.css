@@ -1,0 +1,86 @@
+html {
+  font-size: 5px;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+#background-image {
+  background-image: url('../img/drum-kit.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.dot-pattern {
+  background-image: url('../img/dot-pattern.png');
+  background-repeat: repeat;
+  -webkit-background-size: 2px;
+  -moz-background-size: 2px;
+  -o-background-size: 2px;
+  -ms-background-size: 2px;
+  background-size: 2px;
+  width: 100vw;
+  height: 100vh;
+}
+.welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.key {
+  border: 0.3rem solid #1d1d1d;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.07s ease;
+  width: 10rem;
+  text-align: center;
+  color: #f8f8f8;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 0.5rem #1d1d1d;
+}
+.playing {
+  transform: scale(1.1);
+  border-color: #26a9e1;
+  box-shadow: 0 0 1rem #26a9e1;
+}
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+.sound {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: #26a9e1;
+}
+p {
+  text-align: center;
+  color: #f8f8f8;
+  font-size: 2rem;
+  text-shadow: 1px 1px #1d1d1d;
+  font-weight: 300;
+}
+@media only screen and (min-width: 576px) {
+  html {
+    font-size: 7px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 8.5px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 10px;
+  }
+}
