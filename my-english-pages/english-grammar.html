@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>English Grammar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This is a free site for students to learn English online.">
+<link rel="shortcut icon" href="./img/favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Montserrat&display=swap" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+</head>
+<body class="index-page sidebar-collapse">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top">
+  <div class="container">
+    <div class="navbar-translate"> <a class="navbar-brand" href="index.html">My English Pages</a>
+      <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-bar top-bar"></span> <span class="navbar-toggler-bar middle-bar"></span> <span class="navbar-toggler-bar bottom-bar"></span> </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item"> <a class="nav-link" href="#section-grammar" onclick="scrollToGrammar()">
+          <p>Grammar</p>
+          </a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#section-speech-synthesis" onclick="scrollToSpeechSynthesis()">
+          <p>Speech Synthesis</p>
+          </a> </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="wrapper">
+  <div class="page-header" id="section-english-time">
+    <div class="page-header-image" data-parallax="true" style="background-image:url('./img/header.jpg');"></div>
+    <div class="container">
+      <div class="content-center">
+        <h1 class="text-shadow">English Grammar</h1>
+        <p class="text-shadow">INSPIRING LANGUAGE LEARNING SINCE 2021</p>
+        <p class="text-shadow">This is a free site for students to learn English online.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <div class="mt-5" id="section-grammar">
+      <div class="container">
+        <h2>Grammar</h2>
+      </div>
+    </div>
+    <div class="mt-5" id="section-speech-synthesis">
+      <div class="container">
+        <h2>Speech Synthesis</h2>
+        <form class="col-md-10 ml-auto mr-auto">
+          <div class="form-group">
+            <label for="text" class="col-form-label">Enter your text:</label>
+            <textarea name="text" id="text" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="voices" class="col-form-label">Select a voice:</label>
+            <select name="voice" id="voices" class="form-control">
+              <option value="">Select a voice</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="rate" class="label">Rate:</label>
+              <input name="rate" id="rate" type="range" min="0.5" max="2" value="1" step="0.1" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="pitch" class="label">Pitch:</label>
+              <input name="pitch" id="pitch" type="range" min="0.5" max="2" value="1" step="0.1" class="form-control">
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="startSpeech()">Speak</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" data-background-color="blue">
+    <div class="container text-center"> &#169; <script>document.write(new Date().getFullYear());</script> Your Name. All rights reserved. </div>
+  </footer>
+</div>
+<script>
+    const msg = new SpeechSynthesisUtterance();
+    let voices = [];
+    const voicesDropdown = document.querySelector('#voices');
+    const options = document.querySelectorAll('[type="range"], [name="text"]');
+    const textArea = document.querySelector('#text');
+
+    function populateVoices() {
+      voices = speechSynthesis.getVoices();
+      if (voices.length === 0) {
+        setTimeout(populateVoices, 100);
+        return;
+      }
+      voicesDropdown.innerHTML = voices
+        .filter(voice => voice.lang.includes('en'))
+        .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
+        .join('');
+    }
+
+    function setVoice() {
+      msg.voice = voices.find(voice => voice.name === this.value);
+    }
+
+    function setOption() {
+      msg[this.name] = this.value;
+    }
+
+    function startSpeech() {
+      msg.text = textArea.value;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(msg);
+    }
+
+    speechSynthesis.addEventListener('voiceschanged', populateVoices);
+    voicesDropdown.addEventListener('change', setVoice);
+    options.forEach(option => option.addEventListener('change', setOption));
+    populateVoices();
+  </script>
+</body>
+</html>
