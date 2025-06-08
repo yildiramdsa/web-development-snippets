@@ -1,6 +1,6 @@
 # web-development-snippets
 
-**Tech Stack:** ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-E2D00D?logo=javascript&logoColor=black)
+**Tech Stack:** ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-E6C811?logo=javascript&logoColor=white)
 
 A collection of small, reusable code snippets and mini‑projects showcasing creative and practical front‑end ideas.
 
